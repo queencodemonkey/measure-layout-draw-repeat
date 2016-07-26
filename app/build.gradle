@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+ext.versions = [
+        support: "24.1.1",
+        constraintlayout: "1.0.0-alpha3",
+        butterknife: "7.0.1",
+        calligraphy: "2.1.0"
+]
+
+def versionMajor = 1
+def versionMinor = 0
+def versionPatch = 0
+def versionBuild = 0
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+    defaultConfig {
+        applicationId "com.randomlytyping.measurelayoutdrawrepeat"
+        minSdkVersion 19
+        targetSdkVersion 24
+        versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    return true;
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    // Android
+    compile "com.android.support:appcompat-v7:${versions.support}"
+    // Android: Widgets
+    compile "com.android.support.constraint:constraint-layout:${versions.constraintlayout}"
+    compile "com.android.support.constraint:constraint-layout-solver:${versions.constraintlayout}"
+
+    // Utility
+    compile "com.jakewharton:butterknife:${versions.butterknife}"
+
+    // UI
+    compile "uk.co.chrisjenx:calligraphy:${versions.calligraphy}"
+
+    //Testing
+    testCompile 'junit:junit:4.12'
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+}
