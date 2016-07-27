@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+
+    <!-- Palette -->
+    <color name="colorPrimary">#AD1457</color>
+    <color name="colorPrimaryDark">#880E4F</color>
+    <color name="colorAccent">#E8A433</color>
+
+    <!-- B+W, In-between -->
+
+    <!-- Alternate colors -->
+    <color name="lime_a400">#C6FF00</color>
+    <color name="purple_800">#4527A0</color>
+    <color name="light_blue_500">#03A9F4</color>
+
 </resources>

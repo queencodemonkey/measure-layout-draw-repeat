@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TallyCounter">
+        <attr name="backgroundColor" format="color" />
+        <attr name="baselineColor" format="color" />
+        <attr name="cornerRadius" format="dimension" />
+        <attr name="baselineWidth" format="dimension" />
+        <attr name="android:textSize" />
+        <attr name="android:textColor" />
+    </declare-styleable>
+
+</resources>

@@ -1,3 +1,27 @@
 <resources>
-    <string name="app_name">MeasureLayoutDrawRepeat</string>
+    <string name="app_name">Measure. Layout. Draw. Repeat</string>
+
+    <!-- Counter launcher -->
+    <string name="drawn">Drawn</string>
+    <string name="measured">Measured</string>
+    <string name="invalidated">Invalidated</string>
+    <string name="attributed">Attributed</string>
+    <string name="interacted">Interacted</string>
+    <string name="grouped">ViewGrouped</string>
+
+    <!-- Tally counter interface -->
+    <string name="click">Click</string>
+    <string name="reset">Reset</string>
+
+    <!-- List item example strings -->
+    <string name="list_item_01">Melancholic</string>
+    <string name="list_item_02">Phlegmatic</string>
+    <string name="list_item_03">Sanguine</string>
+    <string name="list_item_04">Choleric</string>
+
+    <string name="list_item_01_desc">Earth. Black. Leonardo. Fred. Jerry. Paul. Reed.</string>
+    <string name="list_item_02_desc">Water. Green. Donatello. Velma. George. George. Sue.</string>
+    <string name="list_item_03_desc">Air. Red. Raphael. Daphne. Elaine. John. Ben.</string>
+    <string name="list_item_04_desc">Fire. Yellow. Michaelangelo. Shaggy. Kramer. Ringo. Johnny.</string>
+
 </resources>

@@ -1,19 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout android:id="@+id/activity_main"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.randomlytyping.measurelayoutdrawrepeat.MainActivity">
+    android:orientation="vertical"
+    android:gravity="center">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/drawn"
+        android:layout_width="@dimen/launcher_button_width"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="@+id/activity_main"
-        app:layout_constraintLeft_toLeftOf="@+id/activity_main"
-        app:layout_constraintRight_toRightOf="@+id/activity_main"
-        app:layout_constraintTop_toTopOf="@+id/activity_main" />
+        android:text="@string/drawn"
+        style="@style/Widget.AppCompat.Button.Colored" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/invalidated"
+        android:layout_width="@dimen/launcher_button_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/launcher_button_gap"
+        android:text="@string/invalidated"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <Button
+        android:id="@+id/measured"
+        android:layout_width="@dimen/launcher_button_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/launcher_button_gap"
+        android:text="@string/measured"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <Button
+        android:id="@+id/attributed"
+        android:layout_width="@dimen/launcher_button_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/launcher_button_gap"
+        android:text="@string/attributed"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <Button
+        android:id="@+id/interacted"
+        android:layout_width="@dimen/launcher_button_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/launcher_button_gap"
+        android:text="@string/interacted"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <Button
+        android:id="@+id/grouped"
+        android:layout_width="@dimen/launcher_button_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/launcher_button_gap"
+        android:text="@string/grouped"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+</LinearLayout>
