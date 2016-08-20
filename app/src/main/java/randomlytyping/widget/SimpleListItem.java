@@ -205,3 +205,9 @@ public class SimpleListItem extends ViewGroup {
             x + subtitleView.getMeasuredWidth(), y + subtitleView.getMeasuredHeight());
     }
 }
+
+
+
+
+
+

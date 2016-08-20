@@ -140,3 +140,13 @@ public class TallyCounterView extends View implements TallyCounter {
         canvas.drawText(displayedCount, textX, baselineY, numberPaint);
     }
 }
+
+
+
+
+
+
+
+
+
+
