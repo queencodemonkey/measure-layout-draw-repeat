@@ -1,11 +1,20 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'
 
 ext.versions = [
-        support: "25.1.0",
-        constraintlayout: "1.0.0-beta4",
-        butterknife: "8.4.0",
-        calligraphy: "2.2.0"
+        // Android
+        targetSdkVersion : 26,
+        minSdkVersion    : 19,
+        buildtools       : "26.0.0",
+        support          : "26.0.0-beta2",
+
+        // Components
+        constraintlayout : "1.0.2",
+
+        // UI
+        calligraphy      : "2.3.0",
+
+        // Utility
+        butterknife      : "8.6.0"
 ]
 
 def versionMajor = 1
@@ -14,16 +23,22 @@ def versionPatch = 0
 def versionBuild = 0
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion versions.targetSdkVersion
+    buildToolsVersion "${versions.buildtools}"
     defaultConfig {
         applicationId "randomlytyping.mldr"
-        minSdkVersion 19
-        targetSdkVersion 25
+        minSdkVersion versions.minSdkVersion
+        targetSdkVersion versions.targetSdkVersion
         versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -35,25 +50,28 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+
     // Android
+    compile "com.android.support:support-v4:${versions.support}"
     compile "com.android.support:appcompat-v7:${versions.support}"
+    compile "com.android.support:design:${versions.support}"
     compile "com.android.support:support-annotations:${versions.support}"
-    // Android: Widgets
-    compile "com.android.support:recyclerview-v7:${versions.support}"
-    compile "com.android.support:cardview-v7:${versions.support}"
+
+    // Android: Components
     compile "com.android.support.constraint:constraint-layout:${versions.constraintlayout}"
     compile "com.android.support.constraint:constraint-layout-solver:${versions.constraintlayout}"
-
-    // Utility
-    compile "com.jakewharton:butterknife:${versions.butterknife}"
-    apt "com.jakewharton:butterknife-compiler:${versions.butterknife}"
 
     // UI
     compile "uk.co.chrisjenx:calligraphy:${versions.calligraphy}"
 
-    //Testing
-    testCompile 'junit:junit:4.12'
+    // Utility
+    compile "com.jakewharton:butterknife:${versions.butterknife}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${versions.butterknife}"
+
+    // Testing
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.google.code.findbugs'
     })
+    testCompile 'junit:junit:4.12'
 }
