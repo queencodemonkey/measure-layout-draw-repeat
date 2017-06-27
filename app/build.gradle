@@ -24,7 +24,7 @@ def versionBuild = 0
 
 android {
     compileSdkVersion versions.targetSdkVersion
-    buildToolsVersion "${versions.buildtools}"
+    buildToolsVersion versions.buildtools
     defaultConfig {
         applicationId "randomlytyping.mldr"
         minSdkVersion versions.minSdkVersion
@@ -32,6 +32,8 @@ android {
         versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        vectorDrawables.useSupportLibrary = true
     }
 
     compileOptions {
@@ -45,33 +47,32 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    return true;
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     // Android
-    compile "com.android.support:support-v4:${versions.support}"
-    compile "com.android.support:appcompat-v7:${versions.support}"
-    compile "com.android.support:design:${versions.support}"
-    compile "com.android.support:support-annotations:${versions.support}"
+    implementation "com.android.support:support-v4:$versions.support"
+    implementation "com.android.support:appcompat-v7:$versions.support"
+    implementation "com.android.support:design:$versions.support"
+    implementation "com.android.support:support-annotations:$versions.support"
 
     // Android: Components
-    compile "com.android.support.constraint:constraint-layout:${versions.constraintlayout}"
-    compile "com.android.support.constraint:constraint-layout-solver:${versions.constraintlayout}"
+    implementation "com.android.support.constraint:constraint-layout:$versions.constraintlayout"
+    implementation "com.android.support.constraint:constraint-layout-solver:$versions.constraintlayout"
 
     // UI
-    compile "uk.co.chrisjenx:calligraphy:${versions.calligraphy}"
+    implementation "uk.co.chrisjenx:calligraphy:$versions.calligraphy"
 
     // Utility
-    compile "com.jakewharton:butterknife:${versions.butterknife}"
-    annotationProcessor "com.jakewharton:butterknife-compiler:${versions.butterknife}"
+    implementation "com.jakewharton:butterknife:$versions.butterknife"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$versions.butterknife"
 
     // Testing
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
         exclude group: 'com.google.code.findbugs'
     })
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
 }
