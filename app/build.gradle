@@ -2,19 +2,23 @@ apply plugin: 'com.android.application'
 
 ext.versions = [
         // Android
-        targetSdkVersion : 26,
-        minSdkVersion    : 19,
-        buildtools       : "26.0.0",
-        support          : "25.4.0",
+        targetSdkVersion    : 26,
+        minSdkVersion       : 19,
+        buildtools          : "26.0.1",
+        support             : "27.0.0",
 
         // Components
         constraintlayout : "1.0.2",
 
+        // Testing
+        espresso            : "3.0.1",
+        junit               : "4.12",
+
         // UI
-        calligraphy      : "2.3.0",
+        calligraphy         : "2.3.0",
 
         // Utility
-        butterknife      : "8.6.0"
+        butterknife         : "8.8.1"
 ]
 
 def versionMajor = 1
@@ -47,6 +51,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildToolsVersion '26.0.2'
 }
 
 dependencies {
@@ -70,9 +75,9 @@ dependencies {
     annotationProcessor "com.jakewharton:butterknife-compiler:$versions.butterknife"
 
     // Testing
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestImplementation("com.android.support.test.espresso:espresso-core:$versions.espresso", {
         exclude group: 'com.android.support', module: 'support-annotations'
         exclude group: 'com.google.code.findbugs'
     })
-    testImplementation 'junit:junit:4.12'
+    testImplementation "junit:junit:$versions.junit"
 }
