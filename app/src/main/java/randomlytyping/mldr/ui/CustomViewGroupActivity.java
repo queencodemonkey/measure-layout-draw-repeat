@@ -16,7 +16,7 @@ import butterknife.ButterKnife;
 import randomlytyping.mldr.R;
 
 /**
- *
+ * Activity with example of a custom ViewGroup.
  */
 public class CustomViewGroupActivity extends AppCompatActivity {
 

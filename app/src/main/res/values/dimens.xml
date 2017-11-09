@@ -7,7 +7,6 @@
     <dimen name="launcher_button_width">240dp</dimen>
     <dimen name="launcher_button_gap">24dp</dimen>
 
-
     <!-- Buttons -->
     <dimen name="click_button_margin_top">48dp</dimen>
     <dimen name="clear_button_margin_top">24dp</dimen>
@@ -24,4 +23,5 @@
     <dimen name="list_item_icon_margin_start">8dp</dimen>
     <dimen name="list_item_icon_margin_end">12dp</dimen>
     <dimen name="list_item_padding_vertical">8dp</dimen>
+
 </resources>
